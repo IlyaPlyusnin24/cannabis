@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans";
+}
+
+:root {
+  --light-blue: #266b95;
+  --lavander-white: #efedf0;
+  --background-color: #f1f2f4;
+  --badge-bg-color: #d1e7b1;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("assets/fonts/WorkSans-Regular.ttf");
+}
