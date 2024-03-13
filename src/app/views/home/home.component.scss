@@ -1,0 +1,118 @@
+.home-wrapper {
+  padding: 1rem;
+
+  .flexbox {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 1.4em;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--light-blue);
+    background: gray;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1em;
+    width: 1em;
+    left: 0.3em;
+    bottom: 0.2em;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .switch input:checked + .slider {
+    background: var(--light-blue);
+  }
+
+  .switch input:focus + .slider {
+    box-shadow: 0 0 1px var(--light-blue);
+  }
+
+  .switch input:checked + .slider:before {
+    transform: translateX(1.8em);
+    width: 1.4em;
+    height: 1.4em;
+    bottom: 0;
+  }
+
+  button {
+    padding: 0.5rem;
+    appearance: none;
+    border: none;
+    background-color: var(--light-blue);
+    color: var(--lavander-white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      background-color: #215b80;
+    }
+
+    &:disabled {
+      background-color: gray;
+    }
+  }
+
+  h2 {
+    font-weight: 100;
+  }
+
+  table {
+    margin-top: 2rem;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table td,
+  table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  table tr {
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+  }
+
+  table tr:hover {
+    background-color: #ddd;
+  }
+
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #858282;
+    color: white;
+  }
+}

@@ -1,0 +1,181 @@
+<section class="home-wrapper">
+  <h2>Agency Name</h2>
+
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Status</th>
+      <th>Not Applicable</th>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        26-2C-27: Personal production of cannabis
+        <button [disabled]="categoryData[1].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[1].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input
+            type="checkbox"
+            (click)="checkBox('1', input)"
+            [checked]="categoryData[1].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        26-2C-28: Unlicensed sales of cannabis
+        <button [disabled]="categoryData[2].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[2].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input2
+            type="checkbox"
+            (click)="checkBox('2', input2)"
+            [checked]="categoryData[2].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        26-2C-29: Cannabis within restricted area
+        <button [disabled]="categoryData[3].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[3].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input3
+            type="checkbox"
+            (click)="checkBox('3', input3)"
+            [checked]="categoryData[3].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        26-2C-30: Unlawful possession of cannabis
+        <button [disabled]="categoryData[4].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[4].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input4
+            type="checkbox"
+            (click)="checkBox('4', input4)"
+            [checked]="categoryData[4].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        26-2C-31: Unlicensed manufacturing of cannabis
+        <button [disabled]="categoryData[5].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[5].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input5
+            type="checkbox"
+            (click)="checkBox('5', input5)"
+            [checked]="categoryData[5].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        66-8-102: Driving under the influence of intoxicating liquor or drugs
+        (Cannabis-related only)
+
+        <button [disabled]="categoryData[6].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[6].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input6
+            type="checkbox"
+            (click)="checkBox('6', input6)"
+            [checked]="categoryData[6].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        66-8-102: Aggravated driving under the influence of intoxicating liquor
+        or drugs (Cannabis-related only)
+
+        <button [disabled]="categoryData[7].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[7].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input7
+            type="checkbox"
+            (click)="checkBox('7', input7)"
+            [checked]="categoryData[7].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        66-13-3: Operating a motorboat while under the influence of intoxicating
+        liquor or drugs. (Cannabis-related only)
+
+        <button [disabled]="categoryData[8].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[8].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input8
+            type="checkbox"
+            (click)="checkBox('8', input8)"
+            [checked]="categoryData[8].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td class="flexbox">
+        66-13-3: Aggravated Operating a motorboat while under the influence of
+        intoxicating liquor or drugs. (Cannabis-related only)
+
+        <button [disabled]="categoryData[9].notApplicable">Enter Data</button>
+      </td>
+      <td>{{ categoryData[9].status }}</td>
+      <td>
+        <label class="switch">
+          <input
+            #input9
+            type="checkbox"
+            (click)="checkBox('9', input9)"
+            [checked]="categoryData[9].notApplicable"
+          />
+          <span class="slider"></span>
+        </label>
+      </td>
+    </tr>
+  </table>
+</section>
