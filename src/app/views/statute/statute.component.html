@@ -1,1 +1,178 @@
-<p>statute works!</p>
+<section class="return-container">
+  <button routerLink="/">Back</button>
+</section>
+
+<p class="category">{{ categoryName }}</p>
+
+<section class="form-wrapper">
+  <form [formGroup]="reportForm">
+    <div class="grid">
+      <label for="arrests">Number of Arrests: </label>
+      <input id="arrests" type="text" formControlName="arrests" />
+
+      <label for="citations">Number of Citations: </label>
+      <input id="citations" type="text" formControlName="citations" />
+
+      <label for="penaltyAssessments">Number of Penalty Assessments: </label>
+      <input
+        id="penaltyAssessments"
+        type="text"
+        formControlName="penaltyAssessments"
+      />
+    </div>
+
+    <div formGroupName="gender" class="grid">
+      <label for="males">Males: </label>
+      <label for="females">Females: </label>
+      <input id="males" type="text" formControlName="male" />
+      <input id="females" type="text" formControlName="female" />
+    </div>
+
+    <label>Ages</label>
+
+    <div formGroupName="age" class="grid">
+      <label for="0-10">0-10</label>
+      <input id="0-10" type="text" formControlName="0_10" placeholder="0-10" />
+      <label for="11-15">11-15</label>
+      <input
+        id="11-15"
+        type="text"
+        formControlName="11_15"
+        placeholder="11-15"
+      />
+      <label for="16-20">16-20</label>
+      <input
+        id="16-20"
+        type="text"
+        formControlName="16_20"
+        placeholder="16-20"
+      />
+      <label for="21-25">21-25</label>
+      <input
+        id="21-25"
+        type="text"
+        formControlName="21_25"
+        placeholder="21-25"
+      />
+      <label for="26-30">26-30</label>
+      <input
+        id="26-30"
+        type="text"
+        formControlName="26_30"
+        placeholder="26-30"
+      />
+      <label for="31-35">31-35</label>
+      <input
+        id="31-35"
+        type="text"
+        formControlName="31_35"
+        placeholder="31-35"
+      />
+      <label for="36-40">36-40</label>
+      <input
+        id="36-40"
+        type="text"
+        formControlName="36_40"
+        placeholder="36-40"
+      />
+      <label for="41-45">41-45</label>
+      <input
+        id="41-45"
+        type="text"
+        formControlName="41_45"
+        placeholder="41-45"
+      />
+      <label for="46-50">46-50</label>
+      <input
+        id="46-50"
+        type="text"
+        formControlName="46_50"
+        placeholder="46-50"
+      />
+      <label for="51-55">51-55</label>
+      <input
+        id="51-55"
+        type="text"
+        formControlName="51_55"
+        placeholder="51-55"
+      />
+      <label for="56-60">56-60</label>
+      <input
+        id="56-60"
+        type="text"
+        formControlName="56_60"
+        placeholder="56-60"
+      />
+      <label for="61-65">61-65</label>
+      <input
+        id="61-65"
+        type="text"
+        formControlName="61_65"
+        placeholder="61-65"
+      />
+      <label for="66+">66+</label>
+      <input id="66+" type="text" formControlName="66_plus" placeholder="66+" />
+      <label for="unknown">Unknown</label>
+      <input
+        id="unknown"
+        type="text"
+        formControlName="unknown"
+        placeholder="unknown"
+      />
+    </div>
+
+    <label>Race</label>
+    <div formGroupName="race" class="grid">
+      <label for="white">White</label>
+      <input id="white" type="text" formControlName="white" />
+      <label for="black">Black</label>
+      <input id="black" type="text" formControlName="black" />
+      <label for="americanIndian_alaskanNative"
+        >American Indian or Alaskan Native</label
+      >
+      <input
+        id="americanIndian_alaskanNative"
+        type="text"
+        formControlName="americanIndian_alaskanNative"
+      />
+      <label for="asian_Pacific_Islander">Asian or Pacific Islander</label>
+      <input
+        id="asian_Pacific_Islander"
+        type="text"
+        formControlName="asian_Pacific_Islander"
+      />
+      <label for="unknown_2">Unknown</label>
+      <input id="unknown_2" type="text" formControlName="unknown" />
+    </div>
+
+    <label>Ethnicity</label>
+    <div formGroupName="ethnicity" class="grid">
+      <label for="hispanic_latino">Hispanic/Latino</label>
+      <input
+        id="hispanic_latino"
+        type="text"
+        formControlName="hispanic_latino"
+      />
+      <label for="not_hispanic_latino">Not Hispanic/Latino</label>
+      <input
+        id="not_hispanic_latino"
+        type="text"
+        formControlName="not_hispanic_latino"
+      />
+      <label for="unknown_3">Unknown</label>
+      <input id="unknown_3" type="text" formControlName="unknown" />
+    </div>
+
+    <label>Penalty Level</label>
+    <div formGroupName="penalty_level" class="grid">
+      @for(penalty of penaltyLevel; track penalty){
+      <label for="{{ penalty }}">{{ penalty_level_names[penalty] }}</label>
+      <input id="{{ penalty }}" type="text" formControlName="{{ penalty }}" />
+      }
+    </div>
+
+    <button class="submit-btn" type="submit" (click)="submitForm()">
+      Submit
+    </button>
+  </form>
+</section>
