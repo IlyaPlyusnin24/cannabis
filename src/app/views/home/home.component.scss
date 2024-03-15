@@ -60,25 +60,6 @@
     bottom: 0;
   }
 
-  button {
-    padding: 0.5rem;
-    appearance: none;
-    border: none;
-    background-color: var(--light-blue);
-    color: var(--lavander-white);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease-in;
-
-    &:hover {
-      background-color: #215b80;
-    }
-
-    &:disabled {
-      background-color: gray;
-    }
-  }
-
   h2 {
     font-weight: 100;
   }
@@ -114,5 +95,12 @@
     text-align: left;
     background-color: #858282;
     color: white;
+  }
+
+  .submit-container {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: flex-end;
   }
 }
