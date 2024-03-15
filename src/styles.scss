@@ -18,3 +18,22 @@
   font-family: "Work Sans";
   src: url("assets/fonts/WorkSans-Regular.ttf");
 }
+
+button {
+  padding: 0.5rem;
+  appearance: none;
+  border: none;
+  background-color: var(--light-blue);
+  color: var(--lavander-white);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    background-color: #215b80;
+  }
+
+  &:disabled {
+    background-color: gray;
+  }
+}
