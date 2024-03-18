@@ -8,6 +8,6 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   createCategories(categories: any) {
-    return this.http.post('/api/categories', categories);
+    return this.http.post('/api/cannabis', categories);
   }
 }
