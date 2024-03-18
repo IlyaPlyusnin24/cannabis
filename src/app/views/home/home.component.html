@@ -14,7 +14,7 @@
           [routerLink]="['/statute/', 'personal_production']"
           [disabled]="categoryData[0].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(0) }}
         </button>
       </td>
       <td>{{ categoryData[0].status }}</td>
@@ -23,7 +23,7 @@
           <input
             #input
             type="checkbox"
-            (click)="checkBox('0', input)"
+            (click)="checkBox(0, input)"
             [checked]="categoryData[0].notApplicable"
           />
           <span class="slider"></span>
@@ -37,7 +37,7 @@
           [routerLink]="['/statute/', 'unlicensed_sale']"
           [disabled]="categoryData[1].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(1) }}
         </button>
       </td>
       <td>{{ categoryData[1].status }}</td>
@@ -46,7 +46,7 @@
           <input
             #input2
             type="checkbox"
-            (click)="checkBox('1', input2)"
+            (click)="checkBox(1, input2)"
             [checked]="categoryData[1].notApplicable"
           />
           <span class="slider"></span>
@@ -60,7 +60,7 @@
           [routerLink]="['/statute/', 'restricted_area']"
           [disabled]="categoryData[2].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(2) }}
         </button>
       </td>
       <td>{{ categoryData[2].status }}</td>
@@ -69,7 +69,7 @@
           <input
             #input3
             type="checkbox"
-            (click)="checkBox('2', input3)"
+            (click)="checkBox(2, input3)"
             [checked]="categoryData[2].notApplicable"
           />
           <span class="slider"></span>
@@ -83,7 +83,7 @@
           [routerLink]="['/statute/', 'unlawful_possession']"
           [disabled]="categoryData[3].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(3) }}
         </button>
       </td>
       <td>{{ categoryData[3].status }}</td>
@@ -92,7 +92,7 @@
           <input
             #input4
             type="checkbox"
-            (click)="checkBox('3', input4)"
+            (click)="checkBox(3, input4)"
             [checked]="categoryData[3].notApplicable"
           />
           <span class="slider"></span>
@@ -106,7 +106,7 @@
           [routerLink]="['/statute/', 'unlicensed_manufacturing']"
           [disabled]="categoryData[4].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(4) }}
         </button>
       </td>
       <td>{{ categoryData[4].status }}</td>
@@ -115,7 +115,7 @@
           <input
             #input5
             type="checkbox"
-            (click)="checkBox('4', input5)"
+            (click)="checkBox(4, input5)"
             [checked]="categoryData[4].notApplicable"
           />
           <span class="slider"></span>
@@ -131,7 +131,7 @@
           [routerLink]="['/statute/', 'dui']"
           [disabled]="categoryData[5].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(5) }}
         </button>
       </td>
       <td>{{ categoryData[5].status }}</td>
@@ -140,7 +140,7 @@
           <input
             #input6
             type="checkbox"
-            (click)="checkBox('5', input6)"
+            (click)="checkBox(5, input6)"
             [checked]="categoryData[5].notApplicable"
           />
           <span class="slider"></span>
@@ -156,7 +156,7 @@
           [routerLink]="['/statute/', 'adui']"
           [disabled]="categoryData[6].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(6) }}
         </button>
       </td>
       <td>{{ categoryData[6].status }}</td>
@@ -165,7 +165,7 @@
           <input
             #input7
             type="checkbox"
-            (click)="checkBox('6', input7)"
+            (click)="checkBox(6, input7)"
             [checked]="categoryData[6].notApplicable"
           />
           <span class="slider"></span>
@@ -181,7 +181,7 @@
           [routerLink]="['/statute/', 'operating_motorboat']"
           [disabled]="categoryData[7].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(7) }}
         </button>
       </td>
       <td>{{ categoryData[7].status }}</td>
@@ -190,7 +190,7 @@
           <input
             #input8
             type="checkbox"
-            (click)="checkBox('7', input8)"
+            (click)="checkBox(7, input8)"
             [checked]="categoryData[7].notApplicable"
           />
           <span class="slider"></span>
@@ -206,7 +206,7 @@
           [routerLink]="['/statute/', 'aggravated_operating_motorboat']"
           [disabled]="categoryData[8].notApplicable"
         >
-          Enter Data
+          {{ buttonValue(8) }}
         </button>
       </td>
       <td>{{ categoryData[8].status }}</td>
@@ -215,7 +215,7 @@
           <input
             #input9
             type="checkbox"
-            (click)="checkBox('8', input9)"
+            (click)="checkBox(8, input9)"
             [checked]="categoryData[8].notApplicable"
           />
           <span class="slider"></span>

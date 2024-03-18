@@ -1,16 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule, Store } from '@ngrx/store';
+import { inject } from '@angular/core';
+import { CategoryActions } from '../../store/categories.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'can-statute',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [RouterLink, ReactiveFormsModule, StoreModule],
   templateUrl: './statute.component.html',
   styleUrl: './statute.component.scss',
 })
 export class StatuteComponent implements OnInit {
   @Input() category!: string;
+
+  store = inject(Store);
 
   public penalty_level_names: any = {
     fine: 'Fine',
@@ -73,7 +79,7 @@ export class StatuteComponent implements OnInit {
 
   public reportForm: any = null;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   public get categoryName() {
     return this.categories[this.category].name;
@@ -127,6 +133,14 @@ export class StatuteComponent implements OnInit {
   }
 
   submitForm() {
+    this.store.dispatch(
+      CategoryActions.addCategory({
+        category: this.reportForm.value,
+        category_name: this.category,
+      })
+    );
+
     console.log({ formValues: this.reportForm.value });
+    this.router.navigate(['/']);
   }
 }

@@ -4,6 +4,13 @@
   .flexbox {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+      flex-shrink: 0;
+      height: 35px;
+    }
   }
 
   .switch {
