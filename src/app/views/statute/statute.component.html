@@ -2,7 +2,7 @@
   <button routerLink="/">Back</button>
 </section>
 
-<p class="category">{{ categoryName }}</p>
+<h2 class="categoryName">{{ categoryName }}</h2>
 
 <section class="form-wrapper">
   <form [formGroup]="reportForm">
@@ -21,14 +21,16 @@
       />
     </div>
 
+    <h3>Gender</h3>
+
     <div formGroupName="gender" class="grid">
       <label for="males">Males: </label>
-      <label for="females">Females: </label>
       <input id="males" type="text" formControlName="male" />
+      <label for="females">Females: </label>
       <input id="females" type="text" formControlName="female" />
     </div>
 
-    <label>Ages</label>
+    <h3>Ages</h3>
 
     <div formGroupName="age" class="grid">
       <label for="0-10">0-10</label>
@@ -121,7 +123,8 @@
       />
     </div>
 
-    <label>Race</label>
+    <h3>Race</h3>
+
     <div formGroupName="race" class="grid">
       <label for="white">White</label>
       <input id="white" type="text" formControlName="white" />
@@ -145,7 +148,8 @@
       <input id="unknown_2" type="text" formControlName="unknown" />
     </div>
 
-    <label>Ethnicity</label>
+    <h3>Ethnicity</h3>
+
     <div formGroupName="ethnicity" class="grid">
       <label for="hispanic_latino">Hispanic/Latino</label>
       <input
@@ -163,7 +167,8 @@
       <input id="unknown_3" type="text" formControlName="unknown" />
     </div>
 
-    <label>Penalty Level</label>
+    <h3>Penalty Level</h3>
+
     <div formGroupName="penalty_level" class="grid">
       @for(penalty of penaltyLevel; track penalty){
       <label for="{{ penalty }}">{{ penalty_level_names[penalty] }}</label>
