@@ -1,0 +1,19 @@
+<section class="form-wrapper">
+  <form [formGroup]="loginForm">
+    <div class="grid">
+      <label for="agency_id">Agency ID</label>
+      <input id="agency_id" type="text" formControlName="agencyId" />
+
+      <label for="access_code">Access Code</label>
+      <input id="access_code" type="text" formControlName="password" />
+    </div>
+
+    <div class="btn-wrapper">
+      <button type="button" (click)="submitForm()">Submit</button>
+    </div>
+
+    @if(error){
+    <p class="error">{{ error }}</p>
+    }
+  </form>
+</section>

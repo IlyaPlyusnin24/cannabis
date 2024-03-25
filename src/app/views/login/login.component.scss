@@ -1,0 +1,39 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+
+  form {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    width: 40%;
+
+    .grid {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 1rem;
+      width: 100%;
+      align-items: center;
+    }
+
+    input {
+      padding: 0.5rem;
+      appearance: none;
+      border: 1px solid gray;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .error {
+      text-align: center;
+      color: red;
+    }
+
+    .btn-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+  }
+}

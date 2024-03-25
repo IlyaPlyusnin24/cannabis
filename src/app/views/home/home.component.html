@@ -1,5 +1,8 @@
 <section class="home-wrapper">
-  <h2>Agency Name</h2>
+  <div class="header-wrapper">
+    <h2>Agency Name</h2>
+    <button (click)="logout()">Logout</button>
+  </div>
 
   <table>
     <tr>
@@ -23,7 +26,7 @@
           <input
             #input
             type="checkbox"
-            (click)="checkBox(0, input)"
+            (click)="checkBox(0, input, $event)"
             [checked]="categoryData[0].notApplicable"
           />
           <span class="slider"></span>
@@ -46,7 +49,7 @@
           <input
             #input2
             type="checkbox"
-            (click)="checkBox(1, input2)"
+            (click)="checkBox(1, input2, $event)"
             [checked]="categoryData[1].notApplicable"
           />
           <span class="slider"></span>
@@ -69,7 +72,7 @@
           <input
             #input3
             type="checkbox"
-            (click)="checkBox(2, input3)"
+            (click)="checkBox(2, input3, $event)"
             [checked]="categoryData[2].notApplicable"
           />
           <span class="slider"></span>
@@ -92,7 +95,7 @@
           <input
             #input4
             type="checkbox"
-            (click)="checkBox(3, input4)"
+            (click)="checkBox(3, input4, $event)"
             [checked]="categoryData[3].notApplicable"
           />
           <span class="slider"></span>
@@ -115,7 +118,7 @@
           <input
             #input5
             type="checkbox"
-            (click)="checkBox(4, input5)"
+            (click)="checkBox(4, input5, $event)"
             [checked]="categoryData[4].notApplicable"
           />
           <span class="slider"></span>
@@ -140,7 +143,7 @@
           <input
             #input6
             type="checkbox"
-            (click)="checkBox(5, input6)"
+            (click)="checkBox(5, input6, $event)"
             [checked]="categoryData[5].notApplicable"
           />
           <span class="slider"></span>
@@ -165,7 +168,7 @@
           <input
             #input7
             type="checkbox"
-            (click)="checkBox(6, input7)"
+            (click)="checkBox(6, input7, $event)"
             [checked]="categoryData[6].notApplicable"
           />
           <span class="slider"></span>
@@ -190,7 +193,7 @@
           <input
             #input8
             type="checkbox"
-            (click)="checkBox(7, input8)"
+            (click)="checkBox(7, input8, $event)"
             [checked]="categoryData[7].notApplicable"
           />
           <span class="slider"></span>
@@ -215,7 +218,7 @@
           <input
             #input9
             type="checkbox"
-            (click)="checkBox(8, input9)"
+            (click)="checkBox(8, input9, $event)"
             [checked]="categoryData[8].notApplicable"
           />
           <span class="slider"></span>
@@ -225,7 +228,12 @@
   </table>
 
   <div class="submit-container">
-    <button [disabled]="validateSubmitButton()" (click)="submitData()">
+    <p class="submit-response">{{ submitResponse }}</p>
+
+    <button [disabled]="validateSaveButton()" (click)="submitData(false)">
+      Save
+    </button>
+    <button [disabled]="validateSubmitButton()" (click)="submitData(true)">
       Submit
     </button>
   </div>

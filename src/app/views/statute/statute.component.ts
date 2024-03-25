@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule, Store } from '@ngrx/store';
-import { inject } from '@angular/core';
 import { CategoryActions } from '../../store/categories.actions';
-import { Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'can-statute',
@@ -15,8 +14,6 @@ import { Router } from '@angular/router';
 })
 export class StatuteComponent implements OnInit {
   @Input() category!: string;
-
-  store = inject(Store);
 
   public penalty_level_names: any = {
     fine: 'Fine',
@@ -79,7 +76,11 @@ export class StatuteComponent implements OnInit {
 
   public reportForm: any = null;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private readonly store: Store
+  ) {}
 
   public get categoryName() {
     return this.categories[this.category].name;
@@ -88,6 +89,10 @@ export class StatuteComponent implements OnInit {
   public get penaltyLevel() {
     return Object.keys(this.categories[this.category].penalty_level);
   }
+
+  private state$: Observable<any> | null = null;
+  private currentState: any;
+  private subscription: Subscription | null = null;
 
   ngOnInit() {
     this.reportForm = this.formBuilder.group({
@@ -130,6 +135,31 @@ export class StatuteComponent implements OnInit {
         this.categories[this.category].penalty_level
       ),
     });
+
+    this.state$ = this.store.select(
+      ({ categories }: any) => categories[this.category]
+    );
+
+    this.subscription = this.state$!.subscribe((state) => {
+      console.log({ state });
+
+      if (state) {
+        this.reportForm.patchValue({
+          arrests: state.arrests,
+          citations: state.citations,
+          penaltyAssessments: state.penaltyAssessments,
+          gender: state.gender,
+          age: state.age,
+          ethnicity: state.ethnicity,
+          race: state.race,
+          penalty_level: state.penalty_level,
+        });
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
   }
 
   submitForm() {
